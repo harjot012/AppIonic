@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="login-content">
+  <div class="form-wrapper">
+    <form [formGroup]="formLogin" class="list-form" (ngSubmit)="doLogin()">
+      
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Tu correo
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <p ion-text class="text08" *ngIf="formLogin.get('email')?.touched && formLogin.get('email')?.hasError('required')">
+        <ion-text color="warning">Debes ingresar tu correo</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formLogin.get('email')?.touched && formLogin.get('email')?.hasError('email')">
+        <ion-text color="warning">Debes ingresar un correo válido</ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Contraseña
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <p ion-text class="text08" *ngIf="formLogin.get('password')?.touched && formLogin.get('password')?.hasError('required')">
+        <ion-text color="warning">Debes ingresar tu contraseña</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formLogin.get('password')?.touched && formLogin.get('password')?.hasError('minlength')">
+        <ion-text color="warning">La contraseña debe tener al menos 6 caracteres</ion-text>
+      </p>
+
+      <div>
+        <ion-button type="submit" icon-left size="medium" expand="full" shape="round" color="dark"
+          (click)="doLogin()" [disabled]="!formLogin.valid" tappable>
+          <ion-icon name="log-in"></ion-icon>
+          Iniciar sesión
+        </ion-button>
+      </div>
+    </form>
+
+    <ion-alert 
+      [isOpen]="error !== ''" 
+      header="Warning!" 
+      [message]="error" 
+      [buttons]="['OK']"
+      (didDismiss)="error=''"
+    ></ion-alert>
+
+  </div>
+</ion-content>

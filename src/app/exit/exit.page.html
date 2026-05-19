@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/wiki"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Exit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="exit-page">
+    <ion-card class="exit-card">
+      <ion-card-header>
+        <ion-card-title>Are you sure you want to close this app?</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="exit-actions">
+          <ion-button type="button" color="primary" (click)="closeApp()">YES</ion-button>
+          <ion-button type="button" color="danger" (click)="goToWiki()">NO</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

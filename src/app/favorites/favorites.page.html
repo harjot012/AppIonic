@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Favorites</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let fav of favorites" [href]="generateURL(fav.category, fav.id)">
+      {{fav.title}} ({{fav.category | titlecase}})
+    </ion-item>
+  </ion-list>
+  <div *ngIf="favorites.length === 0" class="empty-list">
+    <p>No favorites yet.</p>
+  </div>
+</ion-content>

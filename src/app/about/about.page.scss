@@ -1,0 +1,28 @@
+.about-page {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.about-card {
+	width: 100%;
+	max-width: 420px;
+	text-align: center;
+}
+
+.about-logo {
+	display: block;
+	width: 160px;
+	max-width: 70%;
+	margin: 20px auto 0;
+}
+
+.copyright-text {
+	font-size: 0.82rem;
+	text-align: center;
+	margin-top: 18px;
+	color: var(--ion-color-medium);
+	display: block;
+}

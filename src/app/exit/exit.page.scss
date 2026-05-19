@@ -1,0 +1,21 @@
+.exit-page {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+
+.exit-card {
+	width: 100%;
+	max-width: 420px;
+	text-align: center;
+}
+
+.exit-actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
